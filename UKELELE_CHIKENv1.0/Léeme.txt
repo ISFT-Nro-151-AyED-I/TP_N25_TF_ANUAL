@@ -1,0 +1,230 @@
+=====================================================================
+✨ Ukelele Chicken v1.0 - Sistema de Gestión de Boutique de Carnes ✨
+=====================================================================
+
+📋 DESCRIPCIÓN DEL PROYECTO
+
+Ukelele Chicken es un sistema de software desarrollado en C++ para la gestión de una Boutique de Carnes en Santa Clara del Mar. El sistema implementa un modelo orientado a objetos completo que permite gestionar animales, productos derivados, clientes y pedidos, utilizando conceptos avanzados de programación como herencia, polimorfismo y gestión dinámica de memoria.
+
+
+🎯 OBJETIVOS CUMPLIDOS DEL PROYECTO
+
+✅ a.	Desarrollar las clases en C++ completas y funcionales.
+✅ b.	Implementar herencia entre Animal y sus clases derivadas.
+✅ c.	Clase Animal abstracta con clases concretas Pollo, Cerdo, Vaca.
+✅ d.	Métodos comunes definidos en la clase base Animal.
+✅ e.	Separación de interfaz (.hpp) e implementación (.cpp).
+✅ f.	Menú interactivo para seleccionar tipos de objetos en tiempo de ejecución.
+✅ g.	Carga inicial de 5 productos, 3 clientes y 2 pedidos usando arrays.
+✅ h.	Métodos virtuales puros en la clase base Animal.
+✅ i.	Llamadas genéricas a métodos usando polimorfismo.
+✅ j.	Uso de punteros del tipo Animal apuntando a clases derivadas.
+✅ k.	Recorrido de arrays ejecutando métodos comer/dormir mediante polimorfismo.
+✅ l.	Sistema que compila y ejecuta sin errores.
+
+
+🏗️ ARQUITECTURA DEL SISTEMA
+
+El sistema implementa un modelo de dominio completo para una boutique de carnes:
+
+• 🐓 ANIMALES: Jerarquía con clase base abstracta Animal y derivadas concretas.
+• 🥩 PRODUCTOS: Productos cárnicos asociados a animales específicos.
+• 👥 CLIENTES: Clientes registrados en el sistema.
+• 📋 PEDIDOS: Pedidos que relacionan clientes con productos.
+
+
+📁 ESTRUCTURA DE CARPETAS
+
+📁 UKELELE_CHIKENv1.0/
+├── 📁 bin/                    → Ejecutable compilado para Windows.
+│   └── 🚀 UkeleleChiken.exe
+├── 📁 include/                → Archivos de cabecera (.hpp).
+│   ├── 📄 Animal.hpp          → Clase base abstracta Animal.
+│   ├── 📄 Pollo.hpp           → Clase derivada Pollo.
+│   ├── 📄 Cerdo.hpp           → Clase derivada Cerdo.
+│   ├── 📄 Vaca.hpp            → Clase derivada Vaca.
+│   ├── 📄 Producto.hpp        → Clase Producto (agregación con Animal).
+│   ├── 📄 Cliente.hpp         → Clase Cliente.
+│   ├── 📄 Pedido.hpp          → Clase Pedido (agregación con Producto y Cliente).
+│   ├── 📄 Configuracion.hpp   → Constantes y configuración del sistema.
+│   └── 📄 Utilidades.hpp      → Funciones de utilidad y menú principal.
+├── 📁 src/                    → Archivos de implementación (.cpp).
+│   ├── 📄 Animal.cpp
+│   ├── 📄 Pollo.cpp
+│   ├── 📄 Cerdo.cpp
+│   ├── 📄 Vaca.cpp
+│   ├── 📄 Producto.cpp
+│   ├── 📄 Cliente.cpp
+│   ├── 📄 Pedido.cpp
+│   ├── 📄 Utilidades.cpp
+│   └── 📄 Main.cpp            → Punto de entrada principal.
+├── 📄 UkeleleChiken.drawio    → Diagrama UML completo del sistema.
+└── 📄 Léeme.txt               → Esta documentación.
+
+
+🔧 CARACTERÍSTICAS TÉCNICAS IMPLEMENTADAS
+
+🎯 HERENCIA Y POLIMORFISMO
+• Clase Animal con métodos virtuales puros: comer(), dormir(), sonido().
+• Clases derivadas: Pollo, Cerdo, Vaca que implementan los métodos.
+• Uso de punteros de tipo Animal para manejar objetos de tipos derivados.
+
+
+🏗️ DISEÑO ORIENTADO A OBJETOS
+• Clase abstracta Animal como base de la jerarquía.
+• Agregaciones: Producto → Animal, Pedido → Cliente y Producto.
+• Encapsulamiento completo con getters y setters.
+• Namespace UkeleleChiken para organización.
+
+
+💾 GESTIÓN DE DATOS
+• Arrays estáticos para colecciones.
+• Carga inicial: 5 productos, 3 clientes, 2 pedidos.
+• Límites configurables en Configuracion.hpp.
+• IDs automáticos para identificación única.
+
+🎮 INTERFAZ DE USUARIO
+• Menú interactivo con opciones numeradas.
+• Validación de entradas del usuario.
+• Formato visual con emojis y separadores.
+• Limpieza de pantalla y pausas controladas.
+
+💰 MODELO DE NEGOCIO
+• Precios base por tipo de carne (Pollo: $7.500, Cerdo: $7.700, Vaca: $12.500).
+• Cálculo automático de totales en pedidos.
+• Gestión completa del ciclo de ventas.
+
+⚙️ PROCEDIMIENTO DE COMPILACIÓN
+
+Desde la carpeta raíz UKELELE_CHIKENv1.0/, ejecutar:
+
+1. Compilar todos los archivos fuente:
+
+	g++ -I include/ src/*.cpp -o bin/UkeleleChiken.exe
+
+2. Ejecutar el programa:
+
+	bin\UkeleleChiken.exe
+
+
+📋 FUNCIONALIDADES DEL SISTEMA
+
+🏠 MENÚ PRINCIPAL - 7 OPCIONES:
+1. 🐓 Gestión de Animales.
+2. 🥩 Gestión de Productos.
+3. 👥 Gestión de Clientes.
+4. 📋 Gestión de Pedidos.
+5. 🎭 Simular Comportamientos (Polimorfismo).
+6. 📊 Mostrar Reportes.
+7. 🚪 Salir del Sistema.
+
+🐓 MENÚ DE ANIMALES:
+• Crear nuevo animal (Pollo, Cerdo o Vaca).
+• Listar todos los animales registrados.
+• Eliminar animal existente.
+• Visualizar información detallada.
+
+🥩 MENÚ DE PRODUCTOS:
+• Crear nuevo producto asociado a un animal.
+• Listar todos los productos disponibles.
+• Eliminar producto existente.
+• Ver origen animal de cada producto.
+
+👥 MENÚ DE CLIENTES:
+• Registrar nuevo cliente.
+• Listar todos los clientes.
+• Eliminar cliente existente.
+• Visualizar información de contacto.
+
+📋 MENÚ DE PEDIDOS:
+• Crear nuevo pedido (seleccionando cliente).
+• Listar todos los pedidos.
+• Agregar productos a pedidos existentes.
+• Calcular total automáticamente.
+• Ver detalles completos de pedidos.
+
+🎭 SIMULACIÓN POLIMÓRFICA:
+• Alimentar a todos los animales (comer()).
+• Dormir a todos los animales (dormir()).
+• Escuchar sonidos de todos los animales (sonido()).
+• Demostración práctica de polimorfismo.
+
+📊 REPORTES DEL SISTEMA:
+• Resumen de animales por tipo.
+• Inventario de productos.
+• Listado de clientes.
+• Historial de pedidos.
+• Estadísticas de ventas.
+
+
+🔐 LÍMITES DEL SISTEMA (CONFIGURABLES)
+
+• 🐓 Animales máximos: 10
+• 🥩 Productos máximos: 10  
+• 👥 Clientes máximos: 10
+• 📋 Pedidos máximos: 10
+• 📦 Productos por pedido: 10
+• 📝 Nombre máximo: 50 caracteres
+• 🏠 Dirección máxima: 100 caracteres
+
+
+🎨 CARACTERÍSTICAS DE IMPLEMENTACIÓN
+
+✅ Programación Orientada a Objetos completa.
+✅ Herencia y Polimorfismo implementados.
+✅ Clases abstractas con métodos virtuales puros.
+✅ Separación interfaz/implementación (.hpp/.cpp).
+✅ Gestión manual de memoria (new/delete).
+✅ Arrays estáticos con capacidad configurable.
+✅ Agregaciones entre clases usando punteros.
+✅ Namespace para organización modular.
+✅ Validación de entradas del usuario.
+✅ Interfaz visual con emojis y formato.
+✅ Soporte UTF-8 para caracteres especiales.
+✅ Código modular y mantenible.
+
+
+⚠️ NOTAS IMPORTANTES
+
+• El sistema carga datos de demostración automáticamente al iniciar.
+• Los IDs se generan secuencialmente.
+• Se requiere consola de Windows para ejecución óptima.
+• Los emojis funcionan mejor con consolas modernas.
+• La memoria se libera automáticamente al salir.
+• El sistema demuestra polimorfismo recorriendo arrays de punteros Animal*.
+
+🚀 DEMOSTRACIÓN DE POLIMORFISMO
+
+El sistema incluye una demostración práctica de polimorfismo:
+
+Animal* animales[10]; // Array de punteros a Animal
+
+// Punteros apuntan a objetos de diferentes clases derivadas
+animales[0] = new Pollo("Turuleco", "Pollo", 1, 5);
+animales[1] = new Cerdo("Porco Rosso", "Cerdo", 2, false);
+animales[2] = new Vaca("Fiona", "Vaca", 4, 15.5);
+
+// Llamada polimórfica - cada objeto ejecuta SU implementación
+for (int i = 0; i < 3; i++) {
+animales[i]->comer(); // Cada animal come a su manera
+animales[i]->sonido(); // Cada animal hace su sonido
+}
+
+
+🎯 OBJETIVOS DE APRENDIZAJE ALCANZADOS
+
+1. Diseño e implementación de jerarquías de clases.
+2. Uso correcto de herencia y polimorfismo.
+3. Gestión de memoria dinámica en C++.
+4. Diseño de interfaces de usuario en consola.
+5. Implementación de sistemas completos modulares.
+6. Documentación técnica profesional.
+
+Este sistema fue desarrollado como proyecto educativo que demuestra:
+• Principios SOLID en C++.
+• Patrones de diseño orientados a objetos.
+• Gestión profesional de proyectos de software.
+• Documentación técnica completa.
+
+
+🚀 ¡Ejecuta UkeleleChiken.exe y comienza a gestionar tu Boutique de Carnes!
